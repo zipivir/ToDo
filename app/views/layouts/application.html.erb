@@ -1,0 +1,25 @@
+!!!
+%html
+  %head
+    %title Powermat Portal
+    %meta{"http-equiv"=>"Content-Type" , :content=>"text/html; charset=utf-8"}
+    =stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css", "application"
+    = javascript_include_tag "application"
+    = javascript_include_tag controller_name if params[:action] != "install_hotspots" && params[:action] != "gw_install"
+    =csrf_meta_tags
+    %link{:href => "http://fonts.googleapis.com/css?family=Gilda+Display|Telex", :rel => "stylesheet", :type => "text/css"}/
+%body
+  #header
+    -if session[:user_id] 
+        = link_to_unless_current 'MyTasks', tasks_path
+        = link_to_unless_current 'Users', users_path
+    	= link_to image_tag("logout.png", :size => "25x25", :title => "LogOut"), '/login/1',:method=>"delete", :class=> "logout"
+  %br/
+  #content
+    .to_right
+
+    =yield
+  #footer
+    &copy; 2013 - Zipi Vir
+
+

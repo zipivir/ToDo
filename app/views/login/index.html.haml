@@ -1,0 +1,13 @@
+= form_tag(@login,:method => :post, :validate => true, :id => "login_form", :autocomplete => "off") do |f|
+  .log_in
+    = flash[:notice]
+    %h2
+      = I18n.translate :login
+    %br
+    .fieldset
+      = label_tag I18n.t 'email'
+      %br
+      = text_field_tag :email
+    .fieldset
+      = submit_tag 'login'
+    = flash[:error]
