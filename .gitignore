@@ -14,3 +14,20 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+*.rbc
+*.sassc
+.sass-cache
+capybara-*.html
+.rspec
+/.bundle
+/vendor/bundle
+/log/*
+/tmp/*
+/db/*.sqlite3
+/public/system/*
+/coverage/
+/spec/tmp/*
+**.orig
+rerun.txt
+pickle-email-*.html
+>>>>>>> 85515337ea93d6f119e3e6234d53dc70d4e86a3e
